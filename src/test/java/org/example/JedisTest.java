@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.example.util.JedisConnectionFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,8 @@ public class JedisTest
     private Jedis jedis;
     @Before
     public void init() {
-        jedis = new Jedis("127.0.0.1",6379);
+        //jedis = new Jedis("127.0.0.1",6379);
+        jedis = JedisConnectionFactory.getInstance();
     }
 
     @Test
